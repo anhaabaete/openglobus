@@ -87,7 +87,7 @@ class WMS extends XYZ {
         width = 256,
         height = 256
     ) {
-        return `${url}/wms?LAYERS=${layers}&FORMAT=${format}&SERVICE=WMS&VERSION=${version}&REQUEST=${request}
+        return `${url}?LAYERS=${layers}&FORMAT=${format}&SERVICE=WMS&VERSION=${version}&REQUEST=${request}
         &SRS=${srs}&BBOX=${bbox}&WIDTH=${width}&HEIGHT=${height}`;
     }
 
