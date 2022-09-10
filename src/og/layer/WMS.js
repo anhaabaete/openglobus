@@ -87,8 +87,9 @@ class WMS extends XYZ {
         width = 256,
         height = 256
     ) {
-        return `${url}/wms?LAYERS=${layers}&FORMAT=${format}&SERVICE=WMS&VERSION=${version}&REQUEST=${request}
-        &SRS=${srs}&BBOX=${bbox}&WIDTH=${width}&HEIGHT=${height}`;
+        return `${url}?LAYERS=${layers}&TRANSPARENT=TRUE&FORMAT=${encodeURIComponent(format)}&STYLES=` +
+        `&SERVICE=WMS&EXCEPTIONS=application%2Fvnd.ogc.se_inimage&VERSION=${version}&REQUEST=${request}&SRS=${srs}` +
+        `&BBOX=${bbox}&WIDTH=${width}&HEIGHT=${height}`;
     }
 
     static get_bbox_v1_1_1(extent) {
